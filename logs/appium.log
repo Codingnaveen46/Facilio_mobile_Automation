@@ -1,0 +1,362 @@
+2025-10-30 07:06:14:018 [Appium] Welcome to Appium v3.1.0
+2025-10-30 07:06:14:021 [Appium] Non-default server args:
+2025-10-30 07:06:14:022 [Appium] { address: '127.0.0.1', basePath: '/wd/hub', sessionOverride: true }
+2025-10-30 07:06:14:022 [Appium] The autodetected Appium home path: /Users/apple/Desktop/wdio-appium-bdd
+2025-10-30 07:06:14:023 [Appium] Attempting to load driver uiautomator2...
+2025-10-30 07:06:14:025 [Appium] Requiring driver at /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/build/index.js
+2025-10-30 07:06:15:229 [Appium] AndroidUiautomator2Driver has been successfully loaded in 1.205s
+2025-10-30 07:06:15:246 [Appium] Appium REST http interface listener started on http://127.0.0.1:4723/wd/hub
+2025-10-30 07:06:15:247 [Appium] Available drivers:
+2025-10-30 07:06:15:247 [Appium]   - uiautomator2@6.0.2 (automationName 'UiAutomator2')
+2025-10-30 07:06:15:247 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2025-10-30 07:06:17:063 [HTTP] --> POST /wd/hub/session {"capabilities":{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:automationName":"UiAutomator2","appium:app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appium:appPackage":"com.facilio.mobile.workq.revive","appium:appActivity":"com.facilio.mobile.MainActivity","appium:noReset":true,"appium:newCommandTimeout":300,"appium:autoGrantPermissions":true},"firstMatch":[{}]}}
+2025-10-30 07:06:17:064 [AppiumDriver@2688] Calling AppiumDriver.createSession() with args: [{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:automationName":"UiAutomator2","appium:app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appium:appPackage":"com.facilio.mobile.workq.revive","appium:appActivity":"com.facilio.mobile.MainActivity","appium:noReset":true,"appium:newCommandTimeout":300,"appium:autoGrantPermissions":true},"firstMatch":[{}]},{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:automationName":"UiAutomator2","appium:app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appium:appPackage":"com.facilio.mobile.workq.revive","appium:appActivity":"com.facilio.mobile.MainActivity","appium:noReset":true,"appium:newCommandTimeout":300,"appium:autoGrantPermissions":true},"firstMatch":[{}]},{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:autom...
+2025-10-30 07:06:17:066 [AppiumDriver@2688] Event 'newSessionRequested' logged at 1761807977065 (12:36:17 GMT+0530 (India Standard Time))
+2025-10-30 07:06:17:070 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2025-10-30 07:06:17:070 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2025-10-30 07:06:17:070 [Appium] Will require it at /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver
+2025-10-30 07:06:17:071 [Appium] Requiring driver at /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/build/index.js
+2025-10-30 07:06:17:073 [AppiumDriver@2688] Appium v3.1.0 creating new AndroidUiautomator2Driver (v6.0.2) session
+2025-10-30 07:06:17:073 [AppiumDriver@2688] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2025-10-30 07:06:17:073 [AppiumDriver@2688] Appium's BaseDriver version is 10.1.0
+2025-10-30 07:06:17:074 [AppiumDriver@2688] AndroidUiautomator2Driver's BaseDriver version is 10.1.0
+2025-10-30 07:06:17:074 [AppiumDriver@2688] There are no active sessions for cleanup
+2025-10-30 07:06:17:078 [38;5;-108m[AndroidUiautomator2Driver@e85e] 
+2025-10-30 07:06:17:079 [38;5;-108m[AndroidUiautomator2Driver@e85e] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:deviceName": "Pixel_9_Pro",
+    "appium:platformVersion": "16",
+    "appium:automationName": "UiAutomator2",
+    "appium:app": "/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk",
+    "appium:appPackage": "com.facilio.mobile.workq.revive",
+    "appium:appActivity": "com.facilio.mobile.MainActivity",
+    "appium:noReset": true,
+    "appium:newCommandTimeout": 300,
+    "appium:autoGrantPermissions": true
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2025-10-30 07:06:17:084 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Session created with session id: 8dd6b676-85d0-4f4a-9429-c1795e4d2a71
+2025-10-30 07:06:17:096 [8dd6b676][ADB] Found 2 'build-tools' folders under '/Users/apple/Library/Android/sdk' (newest first):
+2025-10-30 07:06:17:097 [8dd6b676][ADB]     /Users/apple/Library/Android/sdk/build-tools/36.0.0
+2025-10-30 07:06:17:097 [8dd6b676][ADB]     /Users/apple/Library/Android/sdk/build-tools/35.0.0
+2025-10-30 07:06:17:097 [8dd6b676][ADB] Using 'adb' from '/Users/apple/Library/Android/sdk/platform-tools/adb'
+2025-10-30 07:06:17:098 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2025-10-30 07:06:17:134 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Retrieving device list
+2025-10-30 07:06:17:134 [8dd6b676][ADB] Trying to find connected Android devices
+2025-10-30 07:06:17:135 [8dd6b676][ADB] Getting connected devices
+2025-10-30 07:06:17:161 [8dd6b676][ADB] Connected devices: [{"udid":"emulator-5554","state":"device"}]
+2025-10-30 07:06:17:162 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Looking for a device with Android '16.0.0'
+2025-10-30 07:06:17:162 [8dd6b676][ADB] Setting device id to emulator-5554
+2025-10-30 07:06:17:162 [8dd6b676][ADB] Getting device platform version
+2025-10-30 07:06:17:162 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2025-10-30 07:06:17:263 [8dd6b676][ADB] Current device property 'ro.build.version.release': 16
+2025-10-30 07:06:17:264 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Using device: emulator-5554
+2025-10-30 07:06:17:264 [8dd6b676][ADB] Using 'adb' from '/Users/apple/Library/Android/sdk/platform-tools/adb'
+2025-10-30 07:06:17:265 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2025-10-30 07:06:17:292 [8dd6b676][ADB] Setting device id to emulator-5554
+2025-10-30 07:06:17:293 [8dd6b676][BaseDriver] Using local app '/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk'
+2025-10-30 07:06:17:562 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Checking whether app is actually present
+2025-10-30 07:06:17:563 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+2025-10-30 07:06:17:670 [8dd6b676][ADB] Current device property 'ro.build.version.sdk': 36
+2025-10-30 07:06:17:670 [8dd6b676][ADB] Getting device platform version
+2025-10-30 07:06:17:670 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2025-10-30 07:06:17:792 [8dd6b676][ADB] Current device property 'ro.build.version.release': 16
+2025-10-30 07:06:17:792 [8dd6b676][ADB] Device API level: 36
+2025-10-30 07:06:17:792 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Relaxing hidden api policy
+2025-10-30 07:06:17:793 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2025-10-30 07:06:17:795 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+2025-10-30 07:06:17:830 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+2025-10-30 07:06:17:926 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Pushing settings apk to the device...
+2025-10-30 07:06:17:926 [8dd6b676][ADB] Getting package info for 'io.appium.settings'
+2025-10-30 07:06:17:926 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2025-10-30 07:06:18:331 [8dd6b676][ADB] Using 'aapt2' from '/Users/apple/Library/Android/sdk/build-tools/36.0.0/aapt2'
+2025-10-30 07:06:18:331 [8dd6b676][ADB] Reading package manifest: '/Users/apple/Library/Android/sdk/build-tools/36.0.0/aapt2 dump badging /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2025-10-30 07:06:18:407 [8dd6b676][ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('7.0.1' >= '7.0.1')
+2025-10-30 07:06:18:408 [8dd6b676][ADB] There is no need to install/upgrade '/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2025-10-30 07:06:18:408 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2025-10-30 07:06:18:509 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] io.appium.settings is already running. There is no need to reset its permissions.
+2025-10-30 07:06:18:510 [8dd6b676][Logcat] Starting logs capture with command: /Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+2025-10-30 07:06:18:608 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Forwarding UiAutomator2 Server port 6790 to local port 8203
+2025-10-30 07:06:18:609 [8dd6b676][ADB] Forwarding system: 8203 to device: 6790
+2025-10-30 07:06:18:609 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8203 tcp:6790'
+2025-10-30 07:06:18:649 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] UIA2Proxy options: {"server":"127.0.0.1","port":8203,"keepAlive":true,"scheme":"http","base":"","reqBasePath":"","sessionId":null,"timeout":240000}
+2025-10-30 07:06:18:649 [8dd6b676][ADB] Getting package info for 'io.appium.uiautomator2.server'
+2025-10-30 07:06:18:650 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2025-10-30 07:06:18:651 [8dd6b676][ADB] Getting install status for io.appium.uiautomator2.server.test
+2025-10-30 07:06:18:651 [8dd6b676][ADB] Getting install status for com.facilio.mobile.workq.revive
+2025-10-30 07:06:18:651 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+2025-10-30 07:06:18:652 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+2025-10-30 07:06:18:830 [8dd6b676][ADB] Reading package manifest: '/Users/apple/Library/Android/sdk/build-tools/36.0.0/aapt2 dump badging /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v9.1.0.apk'
+2025-10-30 07:06:18:842 [8dd6b676][ADB] 'io.appium.uiautomator2.server.test' is installed
+2025-10-30 07:06:18:892 [8dd6b676][ADB] 'com.facilio.mobile.workq.revive' is installed
+2025-10-30 07:06:18:893 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] noReset has been requested and the app is already installed. Doing nothing
+2025-10-30 07:06:19:066 [8dd6b676][ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('9.1.0' >= '9.1.0')
+2025-10-30 07:06:19:066 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Server packages status: [{"installState":"sameVersionInstalled","appPath":"/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v9.1.0.apk","appId":"io.appium.uiautomator2.server"},{"installState":"sameVersionInstalled","appPath":"/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk","appId":"io.appium.uiautomator2.server.test"}]
+2025-10-30 07:06:19:066 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Server packages are not going to be (re)installed
+2025-10-30 07:06:19:066 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Waiting up to 30000ms for services to be available
+2025-10-30 07:06:19:067 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+2025-10-30 07:06:19:266 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+2025-10-30 07:06:19:267 [8dd6b676][ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2025-10-30 07:06:19:267 [8dd6b676][ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
+2025-10-30 07:06:19:268 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+2025-10-30 07:06:19:583 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Performing shallow cleanup of automation leftovers
+2025-10-30 07:06:19:651 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] No obsolete sessions have been detected (socket hang up)
+2025-10-30 07:06:19:651 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server'
+2025-10-30 07:06:19:652 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2025-10-30 07:06:19:871 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Starting UIAutomator2 server 9.1.0
+2025-10-30 07:06:19:871 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Using UIAutomator2 server from '/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v9.1.0.apk' and test from '/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2025-10-30 07:06:19:872 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Waiting up to 30000ms for UiAutomator2 to be online...
+2025-10-30 07:06:19:872 [8dd6b676][ADB] Creating ADB subprocess with args: ["-P","5037","-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics","true","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+2025-10-30 07:06:19:876 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:19:877 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:19:932 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] socket hang up
+2025-10-30 07:06:20:933 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:20:933 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:20:939 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] socket hang up
+2025-10-30 07:06:21:940 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:21:940 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:21:953 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] socket hang up
+2025-10-30 07:06:22:953 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:22:953 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:22:968 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] socket hang up
+2025-10-30 07:06:23:421 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] 
+2025-10-30 07:06:23:970 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:23:971 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:24:028 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"None","value":{"build":{"version":"9.1.0","versionCode":227},"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
+2025-10-30 07:06:24:029 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] The initialization of the instrumentation process took 4157ms
+2025-10-30 07:06:24:029 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Matched '/session' to command name 'createSession'
+2025-10-30 07:06:24:029 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [POST /session] to [POST http://127.0.0.1:8203/session] with body: {"capabilities":{"firstMatch":[{"platformName":"Android","deviceName":"emulator-5554","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"Pixel_9_Pro","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true},"deviceUDID":"emulator-5554"}],"alwaysMatch":{}}}
+2025-10-30 07:06:24:057 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"e2061c41-4177-467f-a199-98273c31147c","value":{"capabilities":{"firstMatch":[{"platformName":"Android","deviceName":"emulator-5554","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"Pixel_9_Pro","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true},"deviceUDID":"emu...
+2025-10-30 07:06:24:058 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Determined the downstream protocol as 'W3C'
+2025-10-30 07:06:24:067 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8203/session/e2061c41-4177-467f-a199-98273c31147c/appium/device/pixel_ratio] with no body
+2025-10-30 07:06:24:070 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8203/session/e2061c41-4177-467f-a199-98273c31147c/appium/device/system_bars] with no body
+2025-10-30 07:06:24:072 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8203/session/e2061c41-4177-467f-a199-98273c31147c/window/current/size] with no body
+2025-10-30 07:06:24:074 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8203/session/e2061c41-4177-467f-a199-98273c31147c/appium/device/info] with no body
+2025-10-30 07:06:24:075 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+2025-10-30 07:06:24:077 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys power'
+2025-10-30 07:06:24:096 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"e2061c41-4177-467f-a199-98273c31147c","value":3}
+2025-10-30 07:06:24:109 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"e2061c41-4177-467f-a199-98273c31147c","value":{"height":2856,"width":1280}}
+2025-10-30 07:06:24:143 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"e2061c41-4177-467f-a199-98273c31147c","value":{"statusBar":156}}
+2025-10-30 07:06:24:152 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"e2061c41-4177-467f-a199-98273c31147c","value":{"androidId":"39a7f418ef2c39a1","apiVersion":"36","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":480,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_x86_64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":12000,"networkCapabilities":"NET_CAPABILITY_NOT_METERED,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_FOREGROUND,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-50,"transportTypes":"TRANSPORT_WIFI"},"detailedState":"CONNECTED","extraInfo":"","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":-1,"subtypeName":"","type":1,"typeName":"WIFI"},{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":15000,"networkCapab...
+2025-10-30 07:06:24:299 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Screen already unlocked, doing nothing
+2025-10-30 07:06:24:299 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Starting 'com.facilio.mobile.workq.revive/com.facilio.mobile.MainActivity' and waiting for 'com.facilio.mobile.workq.revive/com.facilio.mobile.MainActivity'
+2025-10-30 07:06:24:300 [8dd6b676][ADB] Getting IDs of all 'com.facilio.mobile.workq.revive' processes
+2025-10-30 07:06:24:300 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell ps --help'
+2025-10-30 07:06:24:389 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell ps -A'
+2025-10-30 07:06:24:577 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] 'com.facilio.mobile.workq.revive' is already running and noReset is enabled. Set forceAppLaunch capability to true if the app must be forcefully restarted on session startup.
+2025-10-30 07:06:24:577 [8dd6b676][AppiumDriver@2688] New AndroidUiautomator2Driver session created successfully, session 8dd6b676-85d0-4f4a-9429-c1795e4d2a71 added to master session list
+2025-10-30 07:06:24:578 [8dd6b676][AppiumDriver@2688] Event 'newSessionStarted' logged at 1761807984578 (12:36:24 GMT+0530 (India Standard Time))
+2025-10-30 07:06:24:578 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Cached the protocol value 'W3C' for the new session 8dd6b676-85d0-4f4a-9429-c1795e4d2a71
+2025-10-30 07:06:24:578 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Responding to client with driver.createSession() result: {"capabilities":{"platformName":"Android","deviceName":"emulator-5554","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"Pixel_9_Pro","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true},"deviceUDID":"emulator-5554","pixelRatio":"3","statBarHeight":156,"viewportRect":{"left":0,"...
+2025-10-30 07:06:24:581 [8dd6b676][HTTP] <-- POST /wd/hub/session 200 7517 ms - 1263 
+2025-10-30 07:06:27:260 [8dd6b676][HTTP] --> DELETE /wd/hub/session/8dd6b676-85d0-4f4a-9429-c1795e4d2a71 
+2025-10-30 07:06:27:261 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Calling AppiumDriver.deleteSession() with args: ["8dd6b676-85d0-4f4a-9429-c1795e4d2a71"]
+2025-10-30 07:06:27:261 [8dd6b676][AppiumDriver@2688] Event 'quitSessionRequested' logged at 1761807987261 (12:36:27 GMT+0530 (India Standard Time))
+2025-10-30 07:06:27:261 [8dd6b676][AppiumDriver@2688] Removing session 8dd6b676-85d0-4f4a-9429-c1795e4d2a71 from our master session list
+2025-10-30 07:06:27:262 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Deleting UiAutomator2 session
+2025-10-30 07:06:27:262 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Deleting UiAutomator2 server session
+2025-10-30 07:06:27:262 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Proxying [DELETE /] to [DELETE http://127.0.0.1:8203/session/e2061c41-4177-467f-a199-98273c31147c] with no body
+2025-10-30 07:06:27:273 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Got response with status 200: {"sessionId":"e2061c41-4177-467f-a199-98273c31147c","value":null}
+2025-10-30 07:06:27:273 [8dd6b676][ADB] Getting IDs of all 'io.appium.uiautomator2.server' processes
+2025-10-30 07:06:27:273 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell ps -A'
+2025-10-30 07:06:27:343 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:.
+2025-10-30 07:06:27:343 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] 
+2025-10-30 07:06:27:343 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] Time: 3.892
+2025-10-30 07:06:27:343 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] 
+2025-10-30 07:06:27:343 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] OK (1 test)
+2025-10-30 07:06:27:344 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] 
+2025-10-30 07:06:27:344 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] 
+2025-10-30 07:06:27:371 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] [Instrumentation] The process has exited with code 0, signal null
+2025-10-30 07:06:27:534 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server'
+2025-10-30 07:06:27:536 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2025-10-30 07:06:27:704 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings/.recorder.RecorderService'
+2025-10-30 07:06:27:705 [8dd6b676][ADB] Removing forwarded port socket connection: 8203 
+2025-10-30 07:06:27:705 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward --remove tcp:8203'
+2025-10-30 07:06:27:735 [8dd6b676][38;5;-108m[AndroidUiautomator2Driver@e85e] Restoring hidden api policy to the device default configuration
+2025-10-30 07:06:27:735 [8dd6b676][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy''
+2025-10-30 07:06:28:023 [8dd6b676][Logcat] Stopping logcat capture
+2025-10-30 07:06:28:024 [8dd6b676][AppiumDriver@2688] Event 'quitSessionFinished' logged at 1761807988024 (12:36:28 GMT+0530 (India Standard Time))
+2025-10-30 07:06:28:025 [8dd6b676][AppiumDriver@2688] Received response: null
+2025-10-30 07:06:28:025 [8dd6b676][AppiumDriver@2688] But deleting session, so not returning
+2025-10-30 07:06:28:025 [8dd6b676][AppiumDriver@2688] Responding to client with driver.deleteSession() result: null
+2025-10-30 07:06:28:027 [8dd6b676][HTTP] <-- DELETE /wd/hub/session/8dd6b676-85d0-4f4a-9429-c1795e4d2a71 200 766 ms - 14 
+2025-10-30 07:06:30:155 [HTTP] --> POST /wd/hub/session {"capabilities":{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:automationName":"UiAutomator2","appium:app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appium:appPackage":"com.facilio.mobile.workq.revive","appium:appActivity":"com.facilio.mobile.MainActivity","appium:noReset":true,"appium:newCommandTimeout":300,"appium:autoGrantPermissions":true},"firstMatch":[{}]}}
+2025-10-30 07:06:30:155 [AppiumDriver@2688] Calling AppiumDriver.createSession() with args: [{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:automationName":"UiAutomator2","appium:app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appium:appPackage":"com.facilio.mobile.workq.revive","appium:appActivity":"com.facilio.mobile.MainActivity","appium:noReset":true,"appium:newCommandTimeout":300,"appium:autoGrantPermissions":true},"firstMatch":[{}]},{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:automationName":"UiAutomator2","appium:app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appium:appPackage":"com.facilio.mobile.workq.revive","appium:appActivity":"com.facilio.mobile.MainActivity","appium:noReset":true,"appium:newCommandTimeout":300,"appium:autoGrantPermissions":true},"firstMatch":[{}]},{"alwaysMatch":{"platformName":"Android","appium:deviceName":"Pixel_9_Pro","appium:platformVersion":"16","appium:autom...
+2025-10-30 07:06:30:155 [AppiumDriver@2688] Event 'newSessionRequested' logged at 1761807990155 (12:36:30 GMT+0530 (India Standard Time))
+2025-10-30 07:06:30:156 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2025-10-30 07:06:30:156 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2025-10-30 07:06:30:156 [Appium] Will require it at /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver
+2025-10-30 07:06:30:157 [Appium] Requiring driver at /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/build/index.js
+2025-10-30 07:06:30:158 [AppiumDriver@2688] Appium v3.1.0 creating new AndroidUiautomator2Driver (v6.0.2) session
+2025-10-30 07:06:30:159 [AppiumDriver@2688] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2025-10-30 07:06:30:159 [AppiumDriver@2688] Appium's BaseDriver version is 10.1.0
+2025-10-30 07:06:30:159 [AppiumDriver@2688] AndroidUiautomator2Driver's BaseDriver version is 10.1.0
+2025-10-30 07:06:30:159 [AppiumDriver@2688] There are no active sessions for cleanup
+2025-10-30 07:06:30:161 [38;5;-57m[AndroidUiautomator2Driver@6453] 
+2025-10-30 07:06:30:161 [38;5;-57m[AndroidUiautomator2Driver@6453] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:deviceName": "Pixel_9_Pro",
+    "appium:platformVersion": "16",
+    "appium:automationName": "UiAutomator2",
+    "appium:app": "/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk",
+    "appium:appPackage": "com.facilio.mobile.workq.revive",
+    "appium:appActivity": "com.facilio.mobile.MainActivity",
+    "appium:noReset": true,
+    "appium:newCommandTimeout": 300,
+    "appium:autoGrantPermissions": true
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2025-10-30 07:06:30:166 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Session created with session id: f872d80d-aa3f-4229-8a03-0ccb28111faa
+2025-10-30 07:06:30:168 [f872d80d][ADB] Using 'adb' from '/Users/apple/Library/Android/sdk/platform-tools/adb'
+2025-10-30 07:06:30:168 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2025-10-30 07:06:30:202 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Retrieving device list
+2025-10-30 07:06:30:202 [f872d80d][ADB] Trying to find connected Android devices
+2025-10-30 07:06:30:202 [f872d80d][ADB] Getting connected devices
+2025-10-30 07:06:30:236 [f872d80d][ADB] Connected devices: [{"udid":"emulator-5554","state":"device"}]
+2025-10-30 07:06:30:236 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Looking for a device with Android '16.0.0'
+2025-10-30 07:06:30:236 [f872d80d][ADB] Setting device id to emulator-5554
+2025-10-30 07:06:30:236 [f872d80d][ADB] Getting device platform version
+2025-10-30 07:06:30:236 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2025-10-30 07:06:30:319 [f872d80d][ADB] Current device property 'ro.build.version.release': 16
+2025-10-30 07:06:30:319 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Using device: emulator-5554
+2025-10-30 07:06:30:320 [f872d80d][ADB] Using 'adb' from '/Users/apple/Library/Android/sdk/platform-tools/adb'
+2025-10-30 07:06:30:320 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2025-10-30 07:06:30:348 [f872d80d][ADB] Setting device id to emulator-5554
+2025-10-30 07:06:30:349 [f872d80d][BaseDriver] Using local app '/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk'
+2025-10-30 07:06:30:599 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Checking whether app is actually present
+2025-10-30 07:06:30:599 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+2025-10-30 07:06:30:692 [f872d80d][ADB] Current device property 'ro.build.version.sdk': 36
+2025-10-30 07:06:30:692 [f872d80d][ADB] Getting device platform version
+2025-10-30 07:06:30:693 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2025-10-30 07:06:30:777 [f872d80d][ADB] Current device property 'ro.build.version.release': 16
+2025-10-30 07:06:30:777 [f872d80d][ADB] Device API level: 36
+2025-10-30 07:06:30:777 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Relaxing hidden api policy
+2025-10-30 07:06:30:777 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2025-10-30 07:06:30:778 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+2025-10-30 07:06:30:805 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+2025-10-30 07:06:30:867 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Pushing settings apk to the device...
+2025-10-30 07:06:30:867 [f872d80d][ADB] Getting package info for 'io.appium.settings'
+2025-10-30 07:06:30:868 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2025-10-30 07:06:30:981 [f872d80d][ADB] Using 'aapt2' from '/Users/apple/Library/Android/sdk/build-tools/36.0.0/aapt2'
+2025-10-30 07:06:30:981 [f872d80d][ADB] Reading package manifest: '/Users/apple/Library/Android/sdk/build-tools/36.0.0/aapt2 dump badging /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2025-10-30 07:06:31:014 [f872d80d][ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('7.0.1' >= '7.0.1')
+2025-10-30 07:06:31:014 [f872d80d][ADB] There is no need to install/upgrade '/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2025-10-30 07:06:31:014 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2025-10-30 07:06:31:117 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] io.appium.settings is already running. There is no need to reset its permissions.
+2025-10-30 07:06:31:118 [f872d80d][Logcat] Starting logs capture with command: /Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+2025-10-30 07:06:31:219 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Forwarding UiAutomator2 Server port 6790 to local port 8203
+2025-10-30 07:06:31:219 [f872d80d][ADB] Forwarding system: 8203 to device: 6790
+2025-10-30 07:06:31:219 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8203 tcp:6790'
+2025-10-30 07:06:31:251 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] UIA2Proxy options: {"server":"127.0.0.1","port":8203,"keepAlive":true,"scheme":"http","base":"","reqBasePath":"","sessionId":null,"timeout":240000}
+2025-10-30 07:06:31:251 [f872d80d][ADB] Getting package info for 'io.appium.uiautomator2.server'
+2025-10-30 07:06:31:251 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2025-10-30 07:06:31:252 [f872d80d][ADB] Getting install status for io.appium.uiautomator2.server.test
+2025-10-30 07:06:31:252 [f872d80d][ADB] Getting install status for com.facilio.mobile.workq.revive
+2025-10-30 07:06:31:252 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+2025-10-30 07:06:31:253 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+2025-10-30 07:06:31:455 [f872d80d][ADB] 'io.appium.uiautomator2.server.test' is installed
+2025-10-30 07:06:31:460 [f872d80d][ADB] 'com.facilio.mobile.workq.revive' is installed
+2025-10-30 07:06:31:460 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] noReset has been requested and the app is already installed. Doing nothing
+2025-10-30 07:06:31:461 [f872d80d][ADB] Reading package manifest: '/Users/apple/Library/Android/sdk/build-tools/36.0.0/aapt2 dump badging /Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v9.1.0.apk'
+2025-10-30 07:06:31:514 [f872d80d][ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('9.1.0' >= '9.1.0')
+2025-10-30 07:06:31:515 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Server packages status: [{"installState":"sameVersionInstalled","appPath":"/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v9.1.0.apk","appId":"io.appium.uiautomator2.server"},{"installState":"sameVersionInstalled","appPath":"/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk","appId":"io.appium.uiautomator2.server.test"}]
+2025-10-30 07:06:31:515 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Server packages are not going to be (re)installed
+2025-10-30 07:06:31:515 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Waiting up to 30000ms for services to be available
+2025-10-30 07:06:31:515 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+2025-10-30 07:06:31:768 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+2025-10-30 07:06:31:769 [f872d80d][ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2025-10-30 07:06:31:769 [f872d80d][ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
+2025-10-30 07:06:31:769 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+2025-10-30 07:06:32:098 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Performing shallow cleanup of automation leftovers
+2025-10-30 07:06:32:108 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] No obsolete sessions have been detected (socket hang up)
+2025-10-30 07:06:32:108 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server'
+2025-10-30 07:06:32:109 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2025-10-30 07:06:32:336 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Starting UIAutomator2 server 9.1.0
+2025-10-30 07:06:32:336 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Using UIAutomator2 server from '/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v9.1.0.apk' and test from '/Users/apple/Desktop/wdio-appium-bdd/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2025-10-30 07:06:32:337 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Waiting up to 30000ms for UiAutomator2 to be online...
+2025-10-30 07:06:32:337 [f872d80d][ADB] Creating ADB subprocess with args: ["-P","5037","-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics","true","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+2025-10-30 07:06:32:339 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:32:339 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:32:346 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] socket hang up
+2025-10-30 07:06:33:346 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:33:346 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:33:359 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] socket hang up
+2025-10-30 07:06:34:360 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:34:360 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:34:371 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] socket hang up
+2025-10-30 07:06:35:372 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:35:372 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:35:382 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] socket hang up
+2025-10-30 07:06:36:049 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] 
+2025-10-30 07:06:36:383 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:36:383 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:36:392 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] socket hang up
+2025-10-30 07:06:37:394 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/status' to command name 'getStatus'
+2025-10-30 07:06:37:394 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /status] to [GET http://127.0.0.1:8203/status] with no body
+2025-10-30 07:06:37:457 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"None","value":{"build":{"version":"9.1.0","versionCode":227},"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
+2025-10-30 07:06:37:457 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] The initialization of the instrumentation process took 5120ms
+2025-10-30 07:06:37:457 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Matched '/session' to command name 'createSession'
+2025-10-30 07:06:37:458 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [POST /session] to [POST http://127.0.0.1:8203/session] with body: {"capabilities":{"firstMatch":[{"platformName":"Android","deviceName":"emulator-5554","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"Pixel_9_Pro","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true},"deviceUDID":"emulator-5554"}],"alwaysMatch":{}}}
+2025-10-30 07:06:37:494 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"fd820c2d-cf05-4eda-9af0-a641493d8e6d","value":{"capabilities":{"firstMatch":[{"platformName":"Android","deviceName":"emulator-5554","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"Pixel_9_Pro","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true},"deviceUDID":"emu...
+2025-10-30 07:06:37:494 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Determined the downstream protocol as 'W3C'
+2025-10-30 07:06:37:495 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8203/session/fd820c2d-cf05-4eda-9af0-a641493d8e6d/appium/device/pixel_ratio] with no body
+2025-10-30 07:06:37:495 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8203/session/fd820c2d-cf05-4eda-9af0-a641493d8e6d/appium/device/system_bars] with no body
+2025-10-30 07:06:37:496 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8203/session/fd820c2d-cf05-4eda-9af0-a641493d8e6d/window/current/size] with no body
+2025-10-30 07:06:37:497 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8203/session/fd820c2d-cf05-4eda-9af0-a641493d8e6d/appium/device/info] with no body
+2025-10-30 07:06:37:497 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+2025-10-30 07:06:37:498 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys power'
+2025-10-30 07:06:37:513 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"fd820c2d-cf05-4eda-9af0-a641493d8e6d","value":3}
+2025-10-30 07:06:37:524 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"fd820c2d-cf05-4eda-9af0-a641493d8e6d","value":{"statusBar":156}}
+2025-10-30 07:06:37:537 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"fd820c2d-cf05-4eda-9af0-a641493d8e6d","value":{"height":2856,"width":1280}}
+2025-10-30 07:06:37:594 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"fd820c2d-cf05-4eda-9af0-a641493d8e6d","value":{"androidId":"39a7f418ef2c39a1","apiVersion":"36","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":480,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_x86_64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":12000,"networkCapabilities":"NET_CAPABILITY_NOT_METERED,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_FOREGROUND,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-50,"transportTypes":"TRANSPORT_WIFI"},"detailedState":"CONNECTED","extraInfo":"","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":-1,"subtypeName":"","type":1,"typeName":"WIFI"},{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":15000,"networkCapab...
+2025-10-30 07:06:37:737 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Screen already unlocked, doing nothing
+2025-10-30 07:06:37:737 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Starting 'com.facilio.mobile.workq.revive/com.facilio.mobile.MainActivity' and waiting for 'com.facilio.mobile.workq.revive/com.facilio.mobile.MainActivity'
+2025-10-30 07:06:37:737 [f872d80d][ADB] Getting IDs of all 'com.facilio.mobile.workq.revive' processes
+2025-10-30 07:06:37:737 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell ps --help'
+2025-10-30 07:06:37:900 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell ps -A'
+2025-10-30 07:06:38:178 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] 'com.facilio.mobile.workq.revive' is already running and noReset is enabled. Set forceAppLaunch capability to true if the app must be forcefully restarted on session startup.
+2025-10-30 07:06:38:178 [f872d80d][AppiumDriver@2688] New AndroidUiautomator2Driver session created successfully, session f872d80d-aa3f-4229-8a03-0ccb28111faa added to master session list
+2025-10-30 07:06:38:180 [f872d80d][AppiumDriver@2688] Event 'newSessionStarted' logged at 1761807998180 (12:36:38 GMT+0530 (India Standard Time))
+2025-10-30 07:06:38:180 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Cached the protocol value 'W3C' for the new session f872d80d-aa3f-4229-8a03-0ccb28111faa
+2025-10-30 07:06:38:180 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Responding to client with driver.createSession() result: {"capabilities":{"platformName":"Android","deviceName":"emulator-5554","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"Pixel_9_Pro","platformVersion":"16","automationName":"UiAutomator2","app":"/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-svg-helper.apk","appPackage":"com.facilio.mobile.workq.revive","appActivity":"com.facilio.mobile.MainActivity","noReset":true,"newCommandTimeout":300,"autoGrantPermissions":true},"deviceUDID":"emulator-5554","pixelRatio":"3","statBarHeight":156,"viewportRect":{"left":0,"...
+2025-10-30 07:06:38:181 [f872d80d][HTTP] <-- POST /wd/hub/session 200 8026 ms - 1263 
+2025-10-30 07:06:40:746 [f872d80d][HTTP] --> DELETE /wd/hub/session/f872d80d-aa3f-4229-8a03-0ccb28111faa 
+2025-10-30 07:06:40:746 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Calling AppiumDriver.deleteSession() with args: ["f872d80d-aa3f-4229-8a03-0ccb28111faa"]
+2025-10-30 07:06:40:747 [f872d80d][AppiumDriver@2688] Event 'quitSessionRequested' logged at 1761808000747 (12:36:40 GMT+0530 (India Standard Time))
+2025-10-30 07:06:40:747 [f872d80d][AppiumDriver@2688] Removing session f872d80d-aa3f-4229-8a03-0ccb28111faa from our master session list
+2025-10-30 07:06:40:747 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Deleting UiAutomator2 session
+2025-10-30 07:06:40:747 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Deleting UiAutomator2 server session
+2025-10-30 07:06:40:747 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Proxying [DELETE /] to [DELETE http://127.0.0.1:8203/session/fd820c2d-cf05-4eda-9af0-a641493d8e6d] with no body
+2025-10-30 07:06:40:759 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Got response with status 200: {"sessionId":"fd820c2d-cf05-4eda-9af0-a641493d8e6d","value":null}
+2025-10-30 07:06:40:759 [f872d80d][ADB] Getting IDs of all 'io.appium.uiautomator2.server' processes
+2025-10-30 07:06:40:759 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell ps -A'
+2025-10-30 07:06:40:837 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:.
+2025-10-30 07:06:40:837 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] 
+2025-10-30 07:06:40:837 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] Time: 4.754
+2025-10-30 07:06:40:837 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] 
+2025-10-30 07:06:40:838 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] OK (1 test)
+2025-10-30 07:06:40:838 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] 
+2025-10-30 07:06:40:838 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] 
+2025-10-30 07:06:40:872 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] [Instrumentation] The process has exited with code 0, signal null
+2025-10-30 07:06:41:007 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server'
+2025-10-30 07:06:41:008 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2025-10-30 07:06:41:195 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings/.recorder.RecorderService'
+2025-10-30 07:06:41:196 [f872d80d][ADB] Removing forwarded port socket connection: 8203 
+2025-10-30 07:06:41:196 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward --remove tcp:8203'
+2025-10-30 07:06:41:227 [f872d80d][38;5;-57m[AndroidUiautomator2Driver@6453] Restoring hidden api policy to the device default configuration
+2025-10-30 07:06:41:228 [f872d80d][ADB] Running '/Users/apple/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy''
+2025-10-30 07:06:41:524 [f872d80d][Logcat] Stopping logcat capture
+2025-10-30 07:06:41:525 [f872d80d][AppiumDriver@2688] Event 'quitSessionFinished' logged at 1761808001525 (12:36:41 GMT+0530 (India Standard Time))
+2025-10-30 07:06:41:525 [f872d80d][AppiumDriver@2688] Received response: null
+2025-10-30 07:06:41:526 [f872d80d][AppiumDriver@2688] But deleting session, so not returning
+2025-10-30 07:06:41:526 [f872d80d][AppiumDriver@2688] Responding to client with driver.deleteSession() result: null
+2025-10-30 07:06:41:526 [f872d80d][HTTP] <-- DELETE /wd/hub/session/f872d80d-aa3f-4229-8a03-0ccb28111faa 200 780 ms - 14 
+2025-10-30 07:06:41:968 [Appium] Received SIGTERM - shutting down
