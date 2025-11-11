@@ -68,10 +68,10 @@ services: [
 
 capabilities: [{
   platformName: 'Android',
-  'appium:deviceName': 'Pixel_9_Pro',
-  'appium:platformVersion': '16',
+  'appium:deviceName': 'Pixel_9',
+  'appium:platformVersion': '15',
   'appium:automationName': 'UiAutomator2',
-  'appium:app': 'apps/android/app-workq-svg-helper.apk',
+  'appium:app': '/apps/android/app-workq-release 8.apk`',
   'appium:autoGrantPermissions': true,
   'appium:noReset': false,
   'appium:fullReset': true

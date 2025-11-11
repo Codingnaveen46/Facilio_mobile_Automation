@@ -11,49 +11,49 @@ export const config = {
       command: 'appium',
       args: {
         port: 4723,
-        chromedriverExecutableDir: `${process.cwd()}/node_modules/chromedriver/lib/chromedriver`
+        basePath: '/wd/hub'   // ✅ Must match path below
       }
     }]
   ],
 
   port: 4723,
-  path: '/',
+  path: '/wd/hub',            // ✅ Must match service basePath
   logLevel: "info",
 
   capabilities: [
     {
       platformName: "Android",
-      "appium:deviceName": "Pixel_9_Pro",
-      "appium:platformVersion": "16",
+      "appium:deviceName": "Pixel_9",
+      "appium:platformVersion": "15",
       "appium:automationName": "UiAutomator2",
-      "appium:app": `${process.cwd()}/apps/android/app-workq-svg-helper.apk`,
+
+      // Your app
+      "appium:app": `${process.cwd()}/apps/android/app-workq-release 8.apk`,
       "appium:appPackage": "com.facilio.mobile.workq.revive",
       "appium:appActivity": "com.facilio.mobile.MainActivity",
+
       "appium:autoGrantPermissions": true,
       "appium:noReset": false,
       "appium:fullReset": true,
-      "appium:chromedriverAutodownload": true,
+
       "appium:ensureWebviewsHavePages": true,
-      "appium:adbExecTimeout": 60000
+      "appium:adbExecTimeout": 60000,
+
+      // ✅ Use your correct ChromeDriver v124
+      "appium:chromedriverExecutable": "/Users/apple/chromedrivers/124/chromedriver"
     }
   ],
 
-  afterStep: async function (
-  test: any,
-  context: any,
-  { error }: { error?: Error }
-) {
+ afterStep: async function (test: any, context: any, { error }: any) {
   const screenshotDir = path.join(process.cwd(), 'screenshots-temp');
+
   if (!fs.existsSync(screenshotDir)) {
     fs.mkdirSync(screenshotDir);
   }
 
-  const fileName = `${Date.now()}-step.png`;
-  const filePath = path.join(screenshotDir, fileName);
-
+  const filePath = path.join(screenshotDir, `${Date.now()}-step.png`);
   await browser.saveScreenshot(filePath);
 
-  // Attach only on failure
   if (error) {
     await allure.addAttachment(
       'Failure Screenshot',
@@ -77,3 +77,4 @@ afterScenario: async function (
 },
 
 };
+ 

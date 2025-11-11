@@ -7,10 +7,10 @@ dotenv.config();
 export const config: Options.Testrunner = {
   runner: 'local',
 
-  services: [
-    'appium',
-    CleanAllureService  // ✅ Custom service cleans allure-results before run
-  ],
+ services: [
+  'appium',
+  CleanAllureService
+],
 
   specs: [`${process.cwd()}/tests/features/**/*.feature`],
 
@@ -23,7 +23,7 @@ export const config: Options.Testrunner = {
 
   cucumberOpts: {
     require: ['./tests/step-definitions/**/*.ts'],
-      tagExpression: '@smoke or @Regression or @Login',
+      tagExpression: '@smoke or @Regression or @Login or @P0 or @P1',
     timeout: 90000,
   },
 

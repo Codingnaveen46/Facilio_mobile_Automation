@@ -32,6 +32,7 @@
     "allure-commandline": "^2.34.1",
     "appium": "^3.1.0",
     "appium-uiautomator2-driver": "^6.0.2",
+    "appium-xcuitest-driver": "^10.5.0",
     "chai": "^6.2.0",
     "chromedriver": "^133.0.3",
     "expect-webdriverio": "^5.4.3",

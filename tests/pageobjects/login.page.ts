@@ -1,90 +1,74 @@
+import PermissionsHelper from "../../src/helpers/permissionsHelper";
+import { ContextHelper } from "../../src/helpers/contextHelper";
+
 class LoginPage {
-
-
-  get pageHeader(){
-    return $('new UiSelector().text("Maximize Your Output")')
+  // Header on Welcome screen
+  get pageHeader() {
+    return $('//android.widget.TextView[@text="Maximize Your Output."]');
   }
-
   // Welcome/Login screen
-  get loginButton() { 
-    return $('~Login'); 
+  get loginButton() {
+    return $("~Login");
   }
 
-  // Email input field
+  // WebView login fields
   get emailField() {
-    return $('#username');
+    return $('//input[@name="username"]');
   }
-
-  get submitButton() { 
+  get submitButton() {
+    return $('//button[@name="action"]');
+  }
+  get passwordField() {
+    return $('//input[@name="password"]');
+  }
+  get signInButton() {
     return $('//button[@name="action"]');
   }
 
-  // Password input field
-  get passwordField() { 
-    return $('#password');
-  }
-
-  get signInButton() { 
-    return $('//button[@name="action"]');
-  }
-
-  // Notification Allow button (Android system popup)
-  get allowNotificationButton() {
-    return $('//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]');
-  }
-
-  // Home screen element
-  get homeScreen() { 
-    return $('//android.widget.TextView[@resource-id="home-page-welcome-card-name-text"]');
+  // Home screen marker
+  get homeScreen() {
+    return $(
+      '//android.widget.TextView[@resource-id="home-page-welcome-card-name-text"]'
+    );
   }
 
   async openApp() {
     console.log("Launching app...");
-    await driver.pause(3000);
+    await driver.pause(1500);
   }
 
-  // ✅ Add this block
-  async login(email: string, password: string) {
-    console.log("Logging in...");
+  // ✅ Header validation with real assertion
+  async verifyWelcomeHeader() {
+    await this.pageHeader.waitForDisplayed({ timeout: 15000 });
+    const text = await this.pageHeader.getText();
+    console.log("📌 Header text found:", text);
 
+    // Actual assertion
+    expect(text).toBe("Maximize Your Output.");
+  }
+
+  async login(email: string, password: string) {
+    await this.verifyWelcomeHeader(); // 👈 Assertion happens first
+
+    await this.loginButton.waitForDisplayed({ timeout: 10000 });
     await this.loginButton.click();
+
+    // ✅ Switch to WebView to enter credentials
+    await ContextHelper.switchToWebView();
 
     await this.emailField.setValue(email);
     await this.submitButton.click();
-
     await this.passwordField.setValue(password);
     await this.signInButton.click();
 
-    // Handle notification popup
-    try {
-      if (await this.allowNotificationButton.isDisplayed()) {
-        await this.allowNotificationButton.click();
-      }
-    } catch (err) {
-      console.log("Notification popup not shown (continuing)");
-    }
+    // ✅ Switch to Native to handle notification popup
+    await ContextHelper.switchToNative();
+    await PermissionsHelper.allowNotificationsIfVisible();
 
-    await driver.pause(2000);
-  }
-
-
-async handleNotificationPopupIfDisplayed() {
-  try {
-    const allowNotif = await this.allowNotificationButton;
-    if (await allowNotif.isDisplayed()) {
-      await allowNotif.click();
-      console.log("Notification permission allowed");
-    }
-  } catch (e) {
-    console.log("No notification popup found, skipping...");
+    // ✅ Assert Home Screen loaded
+    await this.homeScreen.waitForDisplayed({ timeout: 20000 });
+    console.log("✅ Login complete & Home Screen visible");
   }
 }
-
-
-
-  
-}
-
-
 
 export default new LoginPage();
