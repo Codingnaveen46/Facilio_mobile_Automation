@@ -1,7 +1,7 @@
 Feature: Mobile App Login
 
   @Regression @P1
-  Scenario: User logs in
+  Scenario: TES6505 User logs in
     Given the user launches the app
     When I tap on the Login button on the welcome screen
     And I enter my email "premkumar+mt@facilio.com"
@@ -13,9 +13,20 @@ Feature: Mobile App Login
     Then I should see the Home screen
 
   @Regression @P1
-  Scenario: User switches site after login
+  Scenario: TES6514 User switches site after login
     When I open the site selection dropdown
     And I search for site "Marina"
     And I select the site "Marina"
     Then the site should be switched to "Marina"
     Then I should see the Home screen
+
+  @Regression @P1
+  Scenario: TES6515 User selects Standard template in Create Work Order screen
+    When I navigate to create work order
+    And I open the template dropdown
+    And I select the template "Standard"
+    And I enter subject "Test Work Order1 - Standard"
+    And I enter description "Testing basic fields"
+  #And I select site "Chennai"
+    And I click save
+    Then the work order should be created successfully
