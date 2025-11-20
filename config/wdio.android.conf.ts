@@ -38,7 +38,7 @@ export const config = {
       "appium:automationName": "UiAutomator2",
 
       // App under test
-      "appium:app": `${process.cwd()}/apps/android/app-workq-release 8.apk`,
+      "appium:app": `${process.cwd()}/apps/android/app-workq-release-8.apk`,
       "appium:appPackage": "com.facilio.mobile.workq.revive",
       "appium:appActivity": "com.facilio.mobile.MainActivity",
 
