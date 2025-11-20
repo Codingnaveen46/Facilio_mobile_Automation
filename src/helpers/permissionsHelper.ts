@@ -2,30 +2,29 @@ export class PermissionsHelper {
   static async allowNotificationsIfVisible() {
     await driver.switchContext("NATIVE_APP");
 
-    const allowBtn = $(
+    // Use $$ to find elements without throwing "no such element" error if missing
+    const allowBtns = $$(
       "id=com.android.permissioncontroller:id/permission_allow_button"
     );
-    const allowForegroundBtn = $(
+    const allowForegroundBtns = $$(
       "id=com.android.permissioncontroller:id/permission_allow_foreground_only_button"
     );
 
-    try {
-      if (await allowBtn.isDisplayed()) {
-        await allowBtn.click();
-        console.log("Notification permission allowed (standard)");
-        return;
-      }
-    } catch {}
+    const buttons = await allowBtns;
+    if ((await buttons.length) > 0 && (await buttons[0].isDisplayed())) {
+      await buttons[0].click();
+      console.log("✅ Notification permission allowed (standard)");
+      return;
+    }
 
-    try {
-      if (await allowForegroundBtn.isDisplayed()) {
-        await allowForegroundBtn.click();
-        console.log("Notification permission allowed (foreground only)");
-        return;
-      }
-    } catch {}
+    const fgButtons = await allowForegroundBtns;
+    if ((await fgButtons.length) > 0 && (await fgButtons[0].isDisplayed())) {
+      await fgButtons[0].click();
+      console.log("✅ Notification permission allowed (foreground only)");
+      return;
+    }
 
-    console.log("No notification popup displayed.");
+    console.log("ℹ️ No notification popup displayed (Clean check).");
   }
 }
 

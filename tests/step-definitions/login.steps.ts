@@ -51,5 +51,8 @@ Then("I should see the Home screen", async () => {
 });
 
 Given("the user is logged in", async () => {
-  await LoginPage.login("premkumar+mt@facilio.com", "PremQA@321");
+  await LoginPage.login(
+    process.env.TEST_EMAIL || "default_email",
+    process.env.TEST_PASSWORD || "default_password"
+  );
 });
