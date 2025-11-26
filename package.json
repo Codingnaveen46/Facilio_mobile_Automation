@@ -8,6 +8,7 @@
     "android": "wdio wdio.android.conf.ts",
     "ios": "wdio wdio.ios.conf.ts",
     "test": "wdio wdio.shared.conf.ts",
+    "ci:android": "wdio config/wdio.android.conf.ts --spec tests/features/login.feature",
     "report": "allure generate allure-results --clean -o allure-report && allure open"
   },
   "keywords": [],

@@ -13,17 +13,19 @@ export const config = {
     smoke: [path.resolve(__dirname, "../tests/features/login.feature")],
   },
 
+  // Comment out if you're running Appium manually
+  // Uncomment for CI/CD or if you want WDIO to start Appium automatically
   services: [
-    [
-      "appium",
-      {
-        command: "appium",
-        args: {
-          port: 4723,
-          basePath: "/wd/hub",
-        },
-      },
-    ],
+    // [
+    //   "appium",
+    //   {
+    //     command: "appium",
+    //     args: {
+    //       port: 4723,
+    //       basePath: "/wd/hub",
+    //     },
+    //   },
+    // ],
   ],
 
   port: 4723,
