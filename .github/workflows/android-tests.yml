@@ -37,8 +37,9 @@ jobs:
       
       - name: Install Appium and drivers
         run: |
-          npm install -g appium@latest
-          appium driver install uiautomator2
+          npm install -g appium@2.11.5
+          appium driver install uiautomator2@3.7.6
+          appium driver list
       
       - name: AVD cache
         uses: actions/cache@v4
