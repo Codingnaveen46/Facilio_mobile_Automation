@@ -9,7 +9,7 @@ class WorkOrderPage {
   // Current selected template dropdown
   get templateDropdown() {
     return $(
-      '//android.widget.TextView[contains(@text,"Select") or contains(@text,"TestN") or contains(@text,"test")]'
+      '//com.horcrux.svg.SvgView[@resource-id="chevron-down"]'
     );
   }
 
@@ -25,7 +25,7 @@ class WorkOrderPage {
 
   // Selected Template label on Create Work Order screen
   get selectedTemplateLabel() {
-    return $('//android.widget.TextView[@resource-id="template-name-text"]');
+    return $('android=new UiSelector().textContains("Standard")');
   }
 
   get subjectField() {
