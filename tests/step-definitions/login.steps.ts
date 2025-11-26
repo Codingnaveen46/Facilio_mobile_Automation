@@ -19,8 +19,10 @@ When("I tap on the Login button on the welcome screen", async () => {
   await LoginPage.loginButton.click();
 });
 
-When("I enter my email {string}", async (email: string) => {
+When("I enter my email", async () => {
   await ContextHelper.switchToWebView();
+  const email = process.env.TEST_EMAIL;
+  if (!email) throw new Error("TEST_EMAIL is not set in .env file");
   await LoginPage.emailField.setValue(email);
 });
 
@@ -28,7 +30,9 @@ When("I tap on the Submit button", async () => {
   await LoginPage.submitButton.click();
 });
 
-When("I enter my password {string}", async (password: string) => {
+When("I enter my password", async () => {
+  const password = process.env.TEST_PASSWORD;
+  if (!password) throw new Error("TEST_PASSWORD is not set in .env file");
   await LoginPage.passwordField.setValue(password);
 });
 
