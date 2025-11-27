@@ -1,6 +1,6 @@
 Feature: Mobile App Login
 
-  @Regression @P1
+  @Regression @P1 @P0
   Scenario: TES6505 User logs in
     Given the user launches the app
     When I tap on the Login button on the welcome screen
@@ -12,7 +12,7 @@ Feature: Mobile App Login
     When I tap on the Allow button on the Notifications popup
     Then I should see the Home screen
 
-  @Regression @P1
+  @Regression @P1 @P0
   Scenario: TES6514 User switches site after login
     When I open the site selection dropdown
     And I search for site "Marina"
@@ -20,7 +20,7 @@ Feature: Mobile App Login
     Then the site should be switched to "Marina"
     Then I should see the Home screen
 
-  @Regression @P1
+  @Regression @P1 @P0
   Scenario: TES6515 User selects Standard template in Create Work Order screen
     When I navigate to create work order
     And I open the template dropdown
