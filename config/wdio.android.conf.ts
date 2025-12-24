@@ -3,28 +3,23 @@ import fs from "fs";
 import path from "path";
 import allure from "@wdio/allure-reporter";
 import dotenv from "dotenv";
+import CleanAllureService from "../src/services/cleanAllure.service";
 dotenv.config(); // 👈 Load .env variables securely
 
 export const config = {
   ...sharedConfig,
+
+  // 🔒 Sequential execution on single device
+  maxInstances: 1,
 
   suites: {
     regression: [path.resolve(__dirname, "../tests/features/**/*.feature")],
     smoke: [path.resolve(__dirname, "../tests/features/login.feature")],
   },
 
-  services: [
-    [
-      "appium",
-      {
-        command: "appium",
-        args: {
-          port: 4723,
-          basePath: "/wd/hub",
-        },
-      },
-    ],
-  ],
+  // ⚠️ No Appium service - user runs Appium manually
+  // ✅ CleanAllureService clears allure-results before each run
+  services: [[CleanAllureService, {}]],
 
   port: 4723,
   path: "/wd/hub",
@@ -53,6 +48,17 @@ export const config = {
         "/Users/apple/chromedrivers/124/chromedriver",
     },
   ],
+
+  //
+  // 🏷️ Add Cucumber tags to Allure report as labels
+  //
+  beforeScenario: async function (world: any) {
+    const tags = world.pickle?.tags || [];
+    for (const tag of tags) {
+      const tagName = tag.name.replace("@", ""); // Remove @ prefix
+      allure.addLabel("tag", tagName);
+    }
+  },
 
   //
   // 📸 Capture screenshots after each step and attach to Allure
@@ -114,7 +120,66 @@ export const config = {
         return;
       }
 
-      const uploadCmd = `bugasura UPLOAD_RESULTS results/results-0-0.xml \
+      // Find all XML files in the results directory (excluding combined file)
+      const resultsDir = path.join(process.cwd(), "results");
+      const xmlFiles = fs
+        .readdirSync(resultsDir)
+        .filter(
+          (file: string) =>
+            file.endsWith(".xml") && file !== "combined-results.xml"
+        );
+
+      if (xmlFiles.length === 0) {
+        console.warn("⚠️ No XML result files found in results directory.");
+        return;
+      }
+
+      console.log(`📄 Found ${xmlFiles.length} XML result file(s). Merging...`);
+
+      // Merge all XML files into a single combined file
+      let totalTests = 0;
+      let totalFailures = 0;
+      let totalErrors = 0;
+      let totalSkipped = 0;
+      let allTestSuites = "";
+
+      for (const xmlFile of xmlFiles) {
+        const xmlPath = path.join(resultsDir, xmlFile);
+        const xmlContent = fs.readFileSync(xmlPath, "utf-8");
+
+        // Extract testsuite content (between <testsuites> tags)
+        const testsuiteMatch = xmlContent.match(
+          /<testsuite[\s\S]*?<\/testsuite>/g
+        );
+        if (testsuiteMatch) {
+          allTestSuites += testsuiteMatch.join("\n  ");
+        }
+
+        // Extract counts from testsuites tag
+        const countsMatch = xmlContent.match(
+          /<testsuites tests="(\d+)" failures="(\d+)" errors="(\d+)" skipped="(\d+)"/
+        );
+        if (countsMatch) {
+          totalTests += parseInt(countsMatch[1], 10);
+          totalFailures += parseInt(countsMatch[2], 10);
+          totalErrors += parseInt(countsMatch[3], 10);
+          totalSkipped += parseInt(countsMatch[4], 10);
+        }
+      }
+
+      // Create combined XML
+      const combinedXml = `<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="${totalTests}" failures="${totalFailures}" errors="${totalErrors}" skipped="${totalSkipped}">
+  ${allTestSuites}
+</testsuites>`;
+
+      const combinedPath = path.join(resultsDir, "combined-results.xml");
+      fs.writeFileSync(combinedPath, combinedXml);
+      console.log(`✅ Merged into: combined-results.xml`);
+
+      // Upload the combined XML file to Bugasura
+      console.log(`\n📤 Uploading combined-results.xml to Bugasura...`);
+      const uploadCmd = `bugasura UPLOAD_RESULTS results/combined-results.xml \
         --api_key ${BUGASURA_API_KEY} \
         --team_id ${BUGASURA_TEAM_ID} \
         --project_id ${BUGASURA_PROJECT_ID} \
@@ -122,7 +187,7 @@ export const config = {
         --testrun_id ${BUGASURA_TESTRUN_ID}`;
 
       execSync(uploadCmd, { stdio: "inherit" });
-      console.log("✅ Bugasura upload completed successfully.");
+      console.log("\n🎉 Bugasura upload completed successfully.");
     } catch (err: any) {
       console.error("❌ Bugasura upload failed:", err?.message || err);
     }

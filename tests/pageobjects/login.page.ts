@@ -48,6 +48,17 @@ class LoginPage {
   }
 
   async login(email: string, password: string) {
+    // 🔄 Smart login: skip if already on home screen (regression session reuse)
+    try {
+      const isHomeVisible = await this.homeScreen.isDisplayed();
+      if (isHomeVisible) {
+        console.log("✅ Already logged in - skipping login flow");
+        return;
+      }
+    } catch {
+      // Not on home screen, proceed with login
+    }
+
     await this.verifyWelcomeHeader(); // 👈 Assertion happens first
 
     await this.loginButton.waitForDisplayed({ timeout: 10000 });
