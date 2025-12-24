@@ -33,7 +33,7 @@ export const config: Options.Testrunner = {
 
   cucumberOpts: {
     require: ["./tests/step-definitions/**/*.ts"],
-    tagExpression: "@smoke or @Regression or @Login or @P0 or @P1",
+    tagExpression: process.env.TAG_EXPRESSION || "@Regression",
     timeout: 90000,
   },
 
