@@ -16,10 +16,15 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo 'Starting Docker environment...'
-                sh 'docker-compose up -d appium'
+                // Debugging: Check PATH and docker availability
+                sh 'echo "Current PATH: $PATH"'
+                sh 'which docker || echo "docker not found in PATH"'
+                sh 'docker --version || echo "docker command failed"'
                 
-                // Wait for emulator to be ready (rudimentary check or sleep)
-                // In a production env, you might use a loop checking for status
+                // Use 'docker compose' (v2) instead of 'docker-compose'
+                sh 'docker compose up -d appium'
+                
+                // Wait for emulator to be ready
                 sh 'sleep 60' 
             }
         }
@@ -27,8 +32,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running tests inside Docker...'
-                // Run the test runner service; exit code from this service determines stage success
-                sh 'docker-compose up --exit-code-from test-runner test-runner'
+                sh 'docker compose up --exit-code-from test-runner test-runner'
             }
         }
     }
@@ -36,7 +40,7 @@ pipeline {
     post {
         always {
             echo 'Tearing down environment...'
-            sh 'docker-compose down'
+            sh 'docker compose down'
             
             // Generate/Publish Allure Report if plugin is available
             // allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
