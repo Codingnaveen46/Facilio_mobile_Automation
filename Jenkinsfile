@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        // Ensure /usr/local/bin (where docker/docker-compose usually live on macOS) is in the PATH
+        PATH = "/usr/local/bin:/opt/homebrew/bin:$PATH"
+    }
+
     stages {
         stage('Checkout') {
             steps {
