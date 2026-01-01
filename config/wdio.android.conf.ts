@@ -21,8 +21,10 @@ export const config = {
   // ✅ CleanAllureService clears allure-results before each run
   services: [[CleanAllureService, {}]],
 
-  port: 4723,
-  path: "/wd/hub",
+  // 🐳 Docker/Env support
+  hostname: process.env.APPIUM_HOST || "localhost",
+  port: parseInt(process.env.APPIUM_PORT || "4723", 10),
+  path: process.env.APPIUM_PATH || "/wd/hub",
   logLevel: "info",
 
   capabilities: [
