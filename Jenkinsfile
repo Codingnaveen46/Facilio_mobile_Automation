@@ -23,8 +23,15 @@ pipeline {
                 // Ensure Appium and Emulator are running on the HOST and survive the stage
                 // We use JENKINS_NODE_COOKIE to prevent Process Tree Killer from killing them
                 withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
-                    sh 'nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &'
-                    sh 'nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &'
+                    // Export PATH explicitly for nohup processes
+                    // Assuming Android SDK is at standard Mac location or already in environment
+                    sh '''
+                        export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH:$HOME/Library/Android/sdk/emulator:$HOME/Library/Android/sdk/platform-tools"
+                        echo "Deploying Appium and Emulator with PATH: $PATH"
+                        
+                        nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &
+                        nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &
+                    '''
                 }
                 
                 // Wait for emulator to be ready
