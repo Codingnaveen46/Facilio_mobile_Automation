@@ -32,7 +32,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running tests inside Docker...'
-                sh 'docker compose up --exit-code-from test-runner test-runner'
+                sh 'docker compose up --build --exit-code-from test-runner test-runner'
             }
         }
     }
