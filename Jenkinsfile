@@ -31,13 +31,10 @@ pipeline {
                         pkill -f emulator || true
                         sleep 5
 
-                        # 2. Source User Profile to find Node/NVM
-                        # This is crucial if node is installed via nvm
-                        if [ -f "$HOME/.zshrc" ]; then
-                            source "$HOME/.zshrc"
-                        elif [ -f "$HOME/.bash_profile" ]; then
-                            source "$HOME/.bash_profile"
-                        fi
+                        # 2. Load NVM explicitly to find Node
+                        # Avoid sourcing full shell profiles (like .zshrc) which may fail in non-interactive shells
+                        export NVM_DIR="$HOME/.nvm"
+                        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
                         # 3. Debug Environment again
                         echo "--- Environment Debug ---"
@@ -46,11 +43,7 @@ pipeline {
                         which node || echo "node still not found in PATH"
                         node -v || echo "node execution failed"
                         
-                        # Fallback: Try to find node in common NVM locations if still missing
-                        if ! command -v node &> /dev/null; then
-                            export NVM_DIR="$HOME/.nvm"
-                            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-                        fi
+
 
                         # 4. Start Appium & Emulator
                         echo "--- Starting Appium & Emulator ---"
