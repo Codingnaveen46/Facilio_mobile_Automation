@@ -36,18 +36,28 @@ pipeline {
                         export NVM_DIR="$HOME/.nvm"
                         [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-                        # 3. Debug Environment again
+                        # 3. Setup Android & Appium Environment
+                        export ANDROID_HOME="/Users/apple/Library/Android/sdk"
+                        export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+                        export APPIUM_HOME="$HOME/.appium"
+
+                        # 4. Debug Environment again
                         echo "--- Environment Debug ---"
                         echo "User: $(whoami)"
                         echo "PATH: $PATH"
+                        echo "ANDROID_HOME: $ANDROID_HOME"
+                        echo "APPIUM_HOME: $APPIUM_HOME"
                         which node || echo "node still not found in PATH"
                         node -v || echo "node execution failed"
+                        which emulator || echo "emulator NOT FOUND"
                         
 
-
-                        # 4. Start Appium & Emulator
+                        # 5. Start Appium & Emulator
                         echo "--- Starting Appium & Emulator ---"
+                        # We need to explicitly point Appium to the home where drivers are installed
                         nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &
+                        
+                        # Start Emulator
                         nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &
                         echo "Background processes started."
                     '''
