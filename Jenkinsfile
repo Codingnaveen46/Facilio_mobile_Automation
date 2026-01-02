@@ -27,8 +27,10 @@ pipeline {
                     sh '''
                         # 1. Cleanup old processes to prevent conflicts
                         echo "--- Cleanup Old Processes ---"
-                        pkill -f appium || true
-                        pkill -f emulator || true
+                        # Force kill to ensure no stale locks
+                        pkill -9 -f appium || true
+                        pkill -9 -f emulator || true
+                        pkill -9 -f qemu-system-aarch64 || true
                         sleep 5
 
                         # 2. Load NVM explicitly to find Node
@@ -57,13 +59,26 @@ pipeline {
                         # We need to explicitly point Appium to the home where drivers are installed
                         nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &
                         
-                        # Start Emulator
-                        nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &
+                        # Start Emulator with -wipe-data for a fresh state
+                        nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim -wipe-data > emulator.log 2>&1 &
                         echo "Background processes started."
+                        
+                        # Wait for Emulator to be ready (up to 60s)
+                        echo "Waiting for device to connect..."
+                        timeout=60
+                        counter=0
+                        while [ $counter -lt $timeout ]; do
+                            if adb devices | grep -q "device$"; then
+                                echo "Device connected!"
+                                break
+                            fi
+                            sleep 1
+                            counter=$((counter+1))
+                        done
                     '''
                     
-                    // Wait for emulator to be ready
-                    sh 'sleep 60' 
+                    // Final wait to ensure system boot is settled
+                    sh 'sleep 10' 
 
                     echo "--- Service Status Debug ---"
                     sh 'lsof -i :4723 || echo "Appium port 4723 is NOT open"'
@@ -86,7 +101,15 @@ pipeline {
                     def envFile = "/Users/apple/Desktop/wdio-appium-bdd/.env"
                     if (fileExists(envFile)) {
                         echo "Loading env vars from ${envFile}"
-                        sh "set -a; source '${envFile}'; set +a; docker compose up --build --exit-code-from test-runner test-runner"
+                        // Using set +x to hide the sourcing of sensitive variables
+                        sh """
+                        set +x
+                        set -a
+                        source '${envFile}'
+                        set +a
+                        set -x
+                        docker compose up --build --exit-code-from test-runner test-runner
+                        """
                     } else {
                         error ".env file not found at ${envFile}. Cannot run tests without credentials."
                     }

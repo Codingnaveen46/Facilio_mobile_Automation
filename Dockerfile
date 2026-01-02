@@ -12,6 +12,7 @@ COPY package*.json ./
 
 # Install dependencies (CI for strict lockfile usage)
 RUN npm ci
+RUN npm install -g bugasura-cli
 
 # Copy the rest of the application
 COPY . .
