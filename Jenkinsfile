@@ -24,7 +24,7 @@ pipeline {
                 // We use 'nohup' to run them in background. 
                 // Note: Jenkins needs PATH access to 'appium' and 'emulator'
                 
-                sh 'nohup npx appium --base-path /wd/hub --allow-cors > appium.log 2>&1 &'
+                sh 'nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &'
                 sh 'nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &'
                 
                 // Wait for emulator to be ready
