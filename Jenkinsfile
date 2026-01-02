@@ -1,5 +1,8 @@
-pipeline {
     agent any
+
+    parameters {
+        string(name: 'TAG_EXPRESSION', defaultValue: '@P0', description: 'Cucumber tag expression to run (e.g. @P0, @Regression)')
+    }
 
     environment {
         // Ensure /usr/local/bin (where docker/docker-compose usually live on macOS) is in the PATH

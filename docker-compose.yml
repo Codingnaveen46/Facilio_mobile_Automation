@@ -25,6 +25,7 @@ services:
       - APPIUM_HOST=appium
       - APPIUM_PORT=4723
       - APPIUM_PATH=/
+      - TAG_EXPRESSION # Pass-through from host environment
     volumes:
       - ./allure-results:/app/allure-results
       - ./reports:/app/reports
