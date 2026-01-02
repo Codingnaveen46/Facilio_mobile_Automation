@@ -19,17 +19,16 @@ pipeline {
 
         stage('Setup Environment') {
             steps {
-                echo 'Starting Docker environment...'
-                // Debugging: Check PATH and docker availability
-                sh 'echo "Current PATH: $PATH"'
-                sh 'which docker || echo "docker not found in PATH"'
-                sh 'docker --version || echo "docker command failed"'
+                echo 'Starting Local Environment (Host)...'
+                // Ensure Appium and Emulator are running on the HOST
+                // We use 'nohup' to run them in background. 
+                // Note: Jenkins needs PATH access to 'appium' and 'emulator'
                 
-                // Use 'docker compose' (v2) instead of 'docker-compose'
-                sh 'docker compose up -d appium'
+                sh 'nohup npx appium --base-path /wd/hub --allow-cors > appium.log 2>&1 &'
+                sh 'nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &'
                 
-                // Wait for emulator to be ready (increased for slow boot on non-native arch)
-                sh 'sleep 180' 
+                // Wait for emulator to be ready
+                sh 'sleep 60' 
             }
         }
 
