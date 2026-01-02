@@ -80,7 +80,17 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running tests inside Docker...'
-                sh 'docker compose up --build --exit-code-from test-runner test-runner'
+                // Manually load .env from the local workspace (since it's gitignored and not in SCM)
+                // This is specific to the LOCAL Jenkins setup on this machine.
+                script {
+                    def envFile = "/Users/apple/Desktop/wdio-appium-bdd/.env"
+                    if (fileExists(envFile)) {
+                        echo "Loading env vars from ${envFile}"
+                        sh "set -a; source '${envFile}'; set +a; docker compose up --build --exit-code-from test-runner test-runner"
+                    } else {
+                        error ".env file not found at ${envFile}. Cannot run tests without credentials."
+                    }
+                }
             }
         }
     }

@@ -17,7 +17,11 @@ services:
       # App Path (must be absolute path on HOST for Appium to find it)
       - APP_PATH=/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-release-8.apk
 
+      # Credentials & Config passed from Host/Jenkins
       - TAG_EXPRESSION
+      - TEST_EMAIL
+      - TEST_PASSWORD
+      - BUGASURA_API_KEY
     volumes:
       - ./allure-results:/app/allure-results
       - ./reports:/app/reports
