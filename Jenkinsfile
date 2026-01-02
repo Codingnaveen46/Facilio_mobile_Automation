@@ -20,15 +20,19 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo 'Starting Local Environment (Host)...'
-                // Ensure Appium and Emulator are running on the HOST
-                // We use 'nohup' to run them in background. 
-                // Note: Jenkins needs PATH access to 'appium' and 'emulator'
-                
-                sh 'nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &'
-                sh 'nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &'
+                // Ensure Appium and Emulator are running on the HOST and survive the stage
+                // We use JENKINS_NODE_COOKIE to prevent Process Tree Killer from killing them
+                withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
+                    sh 'nohup npx appium --address 0.0.0.0 --base-path /wd/hub --allow-cors > appium.log 2>&1 &'
+                    sh 'nohup emulator -avd Pixel_9_pro -no-snapshot-load -no-audio -no-boot-anim > emulator.log 2>&1 &'
+                }
                 
                 // Wait for emulator to be ready
                 sh 'sleep 60' 
+
+                // Debug: Check if Appium is listening (non-blocking check)
+                sh 'lsof -i :4723 || echo "Appium port 4723 is NOT open"'
+                sh 'cat appium.log || echo "No appium.log found"' 
             }
         }
 
