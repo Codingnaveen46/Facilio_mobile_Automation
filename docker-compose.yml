@@ -26,6 +26,8 @@ services:
       - APPIUM_PORT=4723
       - APPIUM_PATH=/
       - TAG_EXPRESSION # Pass-through from host environment
+      - DEVICE_NAME=Samsung Galaxy S10
+      - PLATFORM_VERSION=11
     volumes:
       - ./allure-results:/app/allure-results
       - ./reports:/app/reports

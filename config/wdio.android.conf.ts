@@ -30,8 +30,8 @@ export const config = {
   capabilities: [
     {
       platformName: "Android",
-      "appium:deviceName": "Pixel_9",
-      "appium:platformVersion": "15",
+      "appium:deviceName": process.env.DEVICE_NAME || "Pixel_9",
+      "appium:platformVersion": process.env.PLATFORM_VERSION || "15",
       "appium:automationName": "UiAutomator2",
 
       // App under test

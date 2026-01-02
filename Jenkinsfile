@@ -28,8 +28,8 @@ pipeline {
                 // Use 'docker compose' (v2) instead of 'docker-compose'
                 sh 'docker compose up -d appium'
                 
-                // Wait for emulator to be ready
-                sh 'sleep 60' 
+                // Wait for emulator to be ready (increased for slow boot on non-native arch)
+                sh 'sleep 180' 
             }
         }
 
