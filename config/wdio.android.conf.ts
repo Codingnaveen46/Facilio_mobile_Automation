@@ -30,12 +30,12 @@ export const config = {
   capabilities: [
     {
       platformName: "Android",
-      "appium:deviceName": "Pixel_9",
-      "appium:platformVersion": "15",
+      "appium:deviceName": process.env.DEVICE_NAME || "Pixel_9",
+      "appium:platformVersion": process.env.PLATFORM_VERSION || "15",
       "appium:automationName": "UiAutomator2",
 
-      // App under test
-      "appium:app": `${process.cwd()}/apps/android/app-workq-release-8.apk`,
+      // App under test (Use APP_PATH from env if set, otherwise resolve locally)
+      "appium:app": process.env.APP_PATH || `${process.cwd()}/apps/android/app-workq-release-8.apk`,
       "appium:appPackage": "com.facilio.mobile.workq.revive",
       "appium:appActivity": "com.facilio.mobile.MainActivity",
 

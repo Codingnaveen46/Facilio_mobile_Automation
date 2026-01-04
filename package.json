@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./allure-results ./allure-report ./errorShots",
-    "android": "wdio wdio.android.conf.ts",
-    "ios": "wdio wdio.ios.conf.ts",
-    "test": "wdio wdio.shared.conf.ts",
+    "android": "wdio config/wdio.android.conf.ts",
+    "ios": "wdio config/wdio.ios.conf.ts",
+    "test": "wdio config/wdio.shared.conf.ts",
     "report": "allure generate allure-results --clean -o allure-report && allure open"
   },
   "keywords": [],

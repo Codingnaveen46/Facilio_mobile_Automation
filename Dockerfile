@@ -2,7 +2,7 @@ FROM node:20-bookworm
 
 # Install OpenJDK 17 (often required for Allure or Java-based tools)
 RUN apt-get update && \
-    apt-get install -y default-jdk && \
+    apt-get install -y default-jdk python3 python3-pip && \
     apt-get clean;
 
 WORKDIR /app
@@ -12,6 +12,7 @@ COPY package*.json ./
 
 # Install dependencies (CI for strict lockfile usage)
 RUN npm ci
+RUN pip3 install bugasura --break-system-packages
 
 # Copy the rest of the application
 COPY . .
