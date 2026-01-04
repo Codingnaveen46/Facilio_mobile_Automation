@@ -13,10 +13,18 @@ pipeline {
             defaultValue: '@P0',
             description: 'Cucumber tag expression to run (e.g. @P0, @Regression)'
         )
+        string(
+            name: 'EMULATOR_NAME',
+            defaultValue: 'Pixel_9_pro',
+            description: 'Android Emulator AVD name'
+        )
     }
 
     environment {
         PATH = "/usr/local/bin:/opt/homebrew/bin:$PATH"
+        ANDROID_HOME = credentials('ANDROID_HOME_PATH')
+        APK_PATH     = credentials('APK_PATH')
+        ENV_FILE     = credentials('ENV_FILE_PATH')
     }
 
     stages {
@@ -28,6 +36,9 @@ pipeline {
         }
 
         stage('Setup Environment') {
+            options {
+                timeout(time: 15, unit: 'MINUTES')
+            }
             steps {
                 echo 'Starting host-level Appium & Emulator setup...'
 
@@ -52,7 +63,6 @@ pipeline {
                         export NVM_DIR="$HOME/.nvm"
                         [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-                        export ANDROID_HOME="/Users/apple/Library/Android/sdk"
                         export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
                         export APPIUM_HOME="$HOME/.appium"
 
@@ -73,7 +83,7 @@ pipeline {
 
                         if [ "$EMULATOR_RUNNING" = "false" ]; then
                             echo "--- Starting Emulator ---"
-                            nohup emulator -avd Pixel_9_pro \
+                            nohup emulator -avd "$EMULATOR_NAME" \
                               -no-snapshot-load \
                               -no-audio \
                               -no-boot-anim \
@@ -91,11 +101,10 @@ pipeline {
                         fi
 
                         echo "--- Installing App ---"
-                        APP_PATH="/Users/apple/Desktop/wdio-appium-bdd/apps/android/app-workq-release-8.apk"
-                        if [ -f "$APP_PATH" ]; then
-                            adb install -r "$APP_PATH" || true
+                        if [ -f "$APK_PATH" ]; then
+                            adb install -r "$APK_PATH" || true
                         else
-                            echo "APK not found"
+                            echo "APK not found at $APK_PATH"
                         fi
                     '''
                 }
@@ -103,20 +112,21 @@ pipeline {
         }
 
         stage('Run Tests') {
+            options {
+                timeout(time: 30, unit: 'MINUTES')
+            }
             steps {
                 echo 'Running tests inside Docker container...'
 
                 script {
-                    def envFile = "/Users/apple/Desktop/wdio-appium-bdd/.env"
-
-                    if (!fileExists(envFile)) {
-                        error ".env file not found. Cannot continue."
+                    if (!fileExists(env.ENV_FILE)) {
+                        error ".env file not found at ${env.ENV_FILE}"
                     }
 
                     sh """
                         set +x
                         set -a
-                        source '${envFile}'
+                        source '${ENV_FILE}'
                         set +a
                         set -x
 
