@@ -46,14 +46,12 @@ pipeline {
                     sh '''
                         echo "--- Checking Emulator Status ---"
                         if adb devices | grep -q "device$"; then
-                            echo "Emulator already running"
                             EMULATOR_RUNNING=true
                         else
                             EMULATOR_RUNNING=false
                         fi
 
                         if [ "$EMULATOR_RUNNING" = "false" ]; then
-                            echo "--- Cleaning old processes ---"
                             pkill -9 -f appium || true
                             pkill -9 -f emulator || true
                             pkill -9 -f qemu-system-aarch64 || true
@@ -85,23 +83,19 @@ pipeline {
                               -wipe-data \
                               > emulator.log 2>&1 &
 
-                            echo "--- Waiting for device to connect ---"
                             adb wait-for-device
                         fi
 
-                        echo "--- Waiting for Android to fully boot ---"
+                        echo "--- Waiting for Android boot to complete ---"
                         BOOT_COMPLETED=""
                         while [ "$BOOT_COMPLETED" != "1" ]; do
                           BOOT_COMPLETED=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\\r')
                           sleep 1
                         done
 
-                        echo "--- Preparing Chrome (skip first-run screen) ---"
-                        adb shell pm clear com.android.chrome || true
-                        adb shell settings put secure user_setup_complete 1 || true
-                        adb shell settings put secure device_provisioned 1 || true
-                        adb shell monkey -p com.android.chrome -c android.intent.category.LAUNCHER 1 || true
-                        sleep 3
+                        echo "--- Disabling Chrome First Run Experience (CI FIX) ---"
+                        adb shell 'echo "chrome --disable-fre --no-first-run" > /data/local/tmp/chrome-command-line' || true
+                        adb shell chmod 644 /data/local/tmp/chrome-command-line || true
                         adb shell am force-stop com.android.chrome || true
 
                         echo "--- Installing App ---"
@@ -145,10 +139,8 @@ pipeline {
 
     post {
         always {
-            echo 'Tearing down Docker environment...'
             sh 'docker compose down || true'
 
-            echo 'Cleaning host processes...'
             sh '''
                 killall -9 emulator || true
                 killall -9 qemu-system-aarch64 || true
