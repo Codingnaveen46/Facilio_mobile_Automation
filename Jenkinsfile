@@ -66,11 +66,6 @@ pipeline {
                         export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
                         export APPIUM_HOME="$HOME/.appium"
 
-                        echo "--- Environment Debug ---"
-                        whoami
-                        node -v
-                        which emulator
-
                         echo "--- Starting Appium ---"
                         if ! lsof -i :4723 > /dev/null 2>&1; then
                             nohup npx appium \
@@ -90,15 +85,24 @@ pipeline {
                               -wipe-data \
                               > emulator.log 2>&1 &
 
-                            echo "Waiting for device..."
-                            timeout=60
-                            counter=0
-                            while [ $counter -lt $timeout ]; do
-                                adb devices | grep -q "device$" && break
-                                sleep 1
-                                counter=$((counter+1))
-                            done
+                            echo "--- Waiting for device to connect ---"
+                            adb wait-for-device
                         fi
+
+                        echo "--- Waiting for Android to fully boot ---"
+                        BOOT_COMPLETED=""
+                        while [ "$BOOT_COMPLETED" != "1" ]; do
+                          BOOT_COMPLETED=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\\r')
+                          sleep 1
+                        done
+
+                        echo "--- Preparing Chrome (skip first-run screen) ---"
+                        adb shell pm clear com.android.chrome || true
+                        adb shell settings put secure user_setup_complete 1 || true
+                        adb shell settings put secure device_provisioned 1 || true
+                        adb shell monkey -p com.android.chrome -c android.intent.category.LAUNCHER 1 || true
+                        sleep 3
+                        adb shell am force-stop com.android.chrome || true
 
                         echo "--- Installing App ---"
                         if [ -f "$APK_PATH" ]; then
